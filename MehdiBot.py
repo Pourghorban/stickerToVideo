@@ -4,13 +4,9 @@ import os
 import TEL_API
 from moviepy.editor import VideoFileClip
 
-proxy = {
-    "scheme": "socks5",  # "socks4", "socks5" and "http" are supported
-    "hostname": "127.0.0.1",
-    "port": 10808
-}
 
-app = Client("mehdisticker_bot", api_id=TEL_API.API_ID, api_hash=TEL_API.API_HASH, bot_token=TEL_API.BOT_TOKEN, proxy=proxy)
+
+app = Client("mehdisticker_bot", api_id=TEL_API.API_ID, api_hash=TEL_API.API_HASH, bot_token=TEL_API.BOT_TOKEN)
 
 @app.on_message(filters.command(commands=['start']))
 async def start(bot, update):
